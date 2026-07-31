@@ -1,0 +1,132 @@
+.lyrics-screen {
+  min-height: 100vh;
+  padding: 32px 24px;
+}
+
+.lyrics-screen__inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.lyrics-screen__context {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.lyrics-screen__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lyric-line-option {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  color: var(--text-secondary);
+  transition: background 120ms ease, color 120ms ease;
+  border: none;
+  background: transparent;
+  text-align: left;
+}
+
+.lyric-line-option:hover {
+  background: var(--surface-2);
+}
+
+.lyric-line-option--selected {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.lyric-line-option__time {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  min-width: 38px;
+}
+
+.lyrics-screen__hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.lyrics-screen__sticky {
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg) 70%, transparent);
+  padding: 20px 0 12px;
+  margin-top: 16px;
+}
+
+.lyrics-screen__continue-btn,
+.lyrics-screen__back-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--accent);
+  color: #14100b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lyrics-screen__continue-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lyrics-screen__empty {
+  margin-top: 18px;
+  color: var(--text-secondary);
+  display: grid;
+  gap: 12px;
+}
+
+.lyrics-screen__back-btn {
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 0;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--text-secondary);
+  animation: pulse 900ms infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
