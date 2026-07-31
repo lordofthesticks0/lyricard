@@ -95,7 +95,7 @@ export function ControlPanel({
             data-active={options.backgroundMode === 'blurred'}
             onClick={() => onBackgroundModeChange('blurred')}
           >
-            Blurred
+            Apple Music (blurred)
           </button>
           <button
             type="button"
@@ -103,7 +103,7 @@ export function ControlPanel({
             data-active={options.backgroundMode === 'solid'}
             onClick={() => onBackgroundModeChange('solid')}
           >
-            Solid
+            Spotify (solid)
           </button>
         </div>
       </section>
@@ -145,7 +145,7 @@ export function ControlPanel({
             data-active={options.layoutMode === 'default'}
             onClick={() => onLayoutModeChange('default')}
           >
-            Default
+            Spotify
           </button>
           <button
             type="button"
@@ -153,7 +153,7 @@ export function ControlPanel({
             data-active={options.layoutMode === 'stacked'}
             onClick={() => onLayoutModeChange('stacked')}
           >
-            Stacked cover
+            Alternative
           </button>
         </div>
       </section>

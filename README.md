@@ -18,3 +18,5 @@ For the Apple Music background there's a small distortion on the album cover, an
 Might do some more work on improving (or I guess figuring out what GPT did lol) it.
 
 I made this because Apple doesn't have something like this, and I really wished they do. Their TTML richsync lyrics are actually insane, but only Spotify has this natively.
+
+...and yes I did accidentally commit the whole plan prompt. No, it wasn't me who wrote it either.
