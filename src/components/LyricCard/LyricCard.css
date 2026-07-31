@@ -169,7 +169,7 @@
   margin-top: 5cqw;
   display: flex;
   flex-direction: column;
-  gap: 1cqw;
+  gap: var(--lyrics-spacing, 1cqw);
 }
 
 .lyric-card__line {

@@ -27,6 +27,7 @@ const DEFAULT_OPTIONS: CardOptions = {
   artistFontScale: 1,
   albumFontScale: 1,
   lyricsFontScale: 1,
+  lyricsSpacing: 1,
   progressFontScale: 1,
   customProgressPercent: null,
   backgroundBlur: 70,
@@ -200,6 +201,7 @@ function App() {
         selectedPaletteSwatch={selectedPaletteSwatch}
         solidTextColor={solidTextColor}
         onOptionsChange={setOptions}
+        onBack={() => setStep('lyrics')}
         onLyricsDataChange={setLyricsData}
         onPaletteSelect={(swatch) => {
           setOptions((prev) => ({ ...prev, solidColor: swatch.hex }))

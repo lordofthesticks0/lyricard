@@ -6,11 +6,41 @@
   margin: 0 auto;
   padding: 32px 24px;
   align-items: start;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .editor-screen__preview-column {
   display: grid;
   justify-items: center;
+}
+
+.editor-screen__preview-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.editor-screen__back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 120ms ease;
+}
+
+.editor-screen__back-btn:hover {
+  background: var(--surface-3, var(--surface-2));
 }
 
 .export-buttons {

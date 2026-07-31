@@ -21,6 +21,7 @@ interface ControlPanelProps {
       | 'artistFontScale'
       | 'albumFontScale'
       | 'lyricsFontScale'
+      | 'lyricsSpacing'
       | 'progressFontScale'
       | 'backgroundBlur'
     >,
@@ -276,6 +277,17 @@ export function ControlPanel({
               step="0.01"
               value={options.lyricsFontScale}
               onChange={(event) => onScaleChange('lyricsFontScale', Number(event.target.value))}
+            />
+          </label>
+          <label className="slider-row">
+            <span>Lyrics spacing</span>
+            <input
+              type="range"
+              min="0.2"
+              max="5"
+              step="0.1"
+              value={options.lyricsSpacing ?? 1}
+              onChange={(event) => onScaleChange('lyricsSpacing', Number(event.target.value))}
             />
           </label>
           <label className="slider-row">

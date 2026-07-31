@@ -1,4 +1,4 @@
-import { useMemo, useRef, type Dispatch, type ReactNode, type SetStateAction } from 'react'
+import { useEffect, useMemo, useRef, type Dispatch, type ReactNode, type SetStateAction } from 'react'
 import { toJpeg, toPng } from 'html-to-image'
 import { ControlPanel } from '../ControlPanel/ControlPanel'
 import { LyricCard } from '../LyricCard/LyricCard'
@@ -17,6 +17,7 @@ interface EditorScreenProps {
   palette: PaletteSwatch[]
   selectedPaletteSwatch: string | null
   solidTextColor: string
+  onBack: () => void
   onOptionsChange: Dispatch<SetStateAction<CardOptions>>
   onLyricsDataChange: Dispatch<SetStateAction<LyricsData | null>>
   onPaletteSelect: (swatch: PaletteSwatch) => void
@@ -71,6 +72,7 @@ export function EditorScreen({
   palette,
   selectedPaletteSwatch,
   solidTextColor,
+  onBack,
   onOptionsChange,
   onLyricsDataChange,
   onPaletteSelect,
@@ -79,6 +81,13 @@ export function EditorScreen({
   const cardRef = useRef<HTMLDivElement>(null)
   const ratio = ASPECT_RATIOS[options.aspectRatio]
   const hasArtwork = artworkDataUrl.length > 0
+
+  useEffect(() => {
+    document.body.classList.add('no-scroll')
+    return () => {
+      document.body.classList.remove('no-scroll')
+    }
+  }, [])
 
   const effectiveOptions = useMemo<CardOptions>(
     () => ({
@@ -92,6 +101,11 @@ export function EditorScreen({
   return (
     <main className="editor-screen">
       <section className="editor-screen__preview-column">
+        <div className="editor-screen__preview-header">
+          <button type="button" className="editor-screen__back-btn" onClick={onBack}>
+            ← Back
+          </button>
+        </div>
         <CardPreviewFrame trueWidth={ratio.width} trueHeight={ratio.height}>
           <LyricCard
             ref={cardRef}

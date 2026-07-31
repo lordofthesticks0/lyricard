@@ -15,7 +15,7 @@ interface ItunesSearchResponse {
 }
 
 export async function searchSongs(query: string): Promise<Song[]> {
-  const url = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=song&limit=12`
+  const url = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=song&limit=50`
   const response = await fetch(url)
   const data = (await response.json()) as ItunesSearchResponse
 

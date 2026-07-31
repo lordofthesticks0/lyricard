@@ -67,6 +67,13 @@ body {
   overflow: hidden;
 }
 
+body.no-scroll,
+body.no-scroll #root {
+  overflow: hidden;
+  height: 100vh;
+  max-height: 100vh;
+}
+
 h1,
 h2 {
   font-family: var(--heading);

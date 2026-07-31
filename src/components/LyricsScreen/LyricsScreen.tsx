@@ -61,9 +61,14 @@ export function LyricsScreen({ song, onBack, onContinue }: LyricsScreenProps) {
   return (
     <main className="lyrics-screen">
       <div className="lyrics-screen__inner">
-        <p className="lyrics-screen__context">
-          {song.trackName} · {song.artistName}
-        </p>
+        <div className="lyrics-screen__header">
+          <button type="button" className="lyrics-screen__back-btn" onClick={onBack}>
+            ← Back
+          </button>
+          <p className="lyrics-screen__context">
+            {song.trackName} · {song.artistName}
+          </p>
+        </div>
 
         {isLoading && (
           <div className="loading-dots" aria-label="Loading">

@@ -74,6 +74,7 @@ export const LyricCard = forwardRef<HTMLDivElement, LyricCardProps>(function Lyr
           '--font-scale-artist': options.artistFontScale,
           '--font-scale-album': options.albumFontScale,
           '--font-scale-lyrics': options.lyricsFontScale,
+          '--lyrics-spacing': `${options.lyricsSpacing ?? 1}cqw`,
           '--font-scale-progress': options.progressFontScale,
           '--bg-blur': `${options.backgroundBlur}px`,
         } as CSSProperties

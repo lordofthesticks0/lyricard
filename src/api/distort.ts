@@ -178,7 +178,18 @@ export async function createDistortedBackgroundDataUrl(
   if (!srcCtx) {
     throw new Error('Unable to create source canvas context')
   }
-  srcCtx.drawImage(image, 0, 0, width, height)
+  // Determine deterministic rotation angle (e.g. within -45 to +45 degrees)
+  const angleRad = (hash2(seedA, seedB, 3.14159) * 2 - 1) * (Math.PI / 4)
+
+  srcCtx.save()
+  srcCtx.translate(width / 2, height / 2)
+  srcCtx.rotate(angleRad)
+  // Scale slightly to prevent empty/blank corners after rotation
+  const scale = Math.abs(Math.sin(angleRad)) + Math.abs(Math.cos(angleRad))
+  srcCtx.scale(scale, scale)
+  srcCtx.drawImage(image, -width / 2, -height / 2, width, height)
+  srcCtx.restore()
+
   const srcImageData = srcCtx.getImageData(0, 0, width, height)
   const srcPixels = srcImageData.data
 

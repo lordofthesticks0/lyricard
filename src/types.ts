@@ -41,6 +41,7 @@ export interface CardOptions {
   artistFontScale: number
   albumFontScale: number
   lyricsFontScale: number
+  lyricsSpacing: number
   progressFontScale: number
   customProgressPercent: number | null
   backgroundBlur: number
