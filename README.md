@@ -10,7 +10,7 @@ Small and configurable lyrics card generator. Overnight project to drain my mont
 
 ## Notes
 I don't really plan on improving this but I probably will if this gets enough traction lol, I might learn something from it.
-If one of your songs doesn't load, blame the agy
+If one of your songs doesn't load, blame Apple. Some songs might not be there. Also blame LRCLib because how dare an open, community based lyrics database doesn't have what I want.
 
 ### How it works (if you're interested)
 Search function uses the iTunes API. This is like the only thing Apple gives out for free for everyone. Selecting the song queries LRCLib. It's timestamped to make the seek slider.
